@@ -34,7 +34,7 @@ export default function DiscoverCocktails() {
     <div>
       {categories.map((category) => {
         const searchParam = encodeURIComponent(category.strCategory);
-
+        history.push(`/${searchParam}`);
         return (
           <Link
             onClick={saveIt}
