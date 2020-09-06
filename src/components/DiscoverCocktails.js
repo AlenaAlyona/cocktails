@@ -10,9 +10,10 @@ export default function DiscoverCocktails() {
   // const params = useParams();
   // console.log("PARAMS", params);
 
-  const saveIt = () => {
-    const routeParam = encodeURIComponent(categories);
-    history.push(`/${routeParam}`);
+  const saveIt = function (searchParam) {
+    return function () {
+      history.push(`/${searchParam}`);
+    };
   };
 
   useEffect(() => {
@@ -34,10 +35,9 @@ export default function DiscoverCocktails() {
     <div>
       {categories.map((category) => {
         const searchParam = encodeURIComponent(category.strCategory);
-        history.push(`/${searchParam}`);
         return (
           <Link
-            onClick={saveIt}
+            onClick={saveIt(searchParam)}
             key={category.strCategory}
             to={`/category/${searchParam}`}
           >
