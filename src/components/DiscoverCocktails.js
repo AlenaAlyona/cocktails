@@ -1,13 +1,19 @@
 import React, { useState, useEffect } from "react";
 
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import Category from "./Category";
 
 export default function DiscoverCocktails() {
   const [categories, set_categories] = useState([]);
+  const history = useHistory();
   // const params = useParams();
   // console.log("PARAMS", params);
+
+  const saveIt = () => {
+    const routeParam = encodeURIComponent(categories);
+    history.push(`/${routeParam}`);
+  };
 
   useEffect(() => {
     async function DataFetching() {
@@ -30,7 +36,11 @@ export default function DiscoverCocktails() {
         const searchParam = encodeURIComponent(category.strCategory);
 
         return (
-          <Link key={category.strCategory} to={`/category/${searchParam}`}>
+          <Link
+            onClick={saveIt}
+            key={category.strCategory}
+            to={`/category/${searchParam}`}
+          >
             <Category name={category.strCategory} />
           </Link>
         );
