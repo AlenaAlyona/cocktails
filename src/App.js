@@ -12,8 +12,8 @@ function App() {
       <h1>Wanna discover some cocktails?</h1>
       <NavBar />
       <Switch>
-        <Route exact path="/" component={DiscoverCocktails} />
         <Route path="/category/:drink_cat" component={ExactCategory} />
+        <Route exact path="/" component={DiscoverCocktails} />
         {/* <Categories /> */}
       </Switch>
     </div>
