@@ -6,7 +6,7 @@ import Category from "./Category";
 
 export default function DiscoverCocktails() {
   const [categories, set_categories] = useState([]);
-  const [selected_cat, set_selected_cat] = useState("");
+  // const [selected_cat, set_selected_cat] = useState("");
   const history = useHistory();
   // const params = useParams();
   // console.log("PARAMS", params);
@@ -16,10 +16,10 @@ export default function DiscoverCocktails() {
   //   history.push(`/discover/${routeParam}`);
   // };
 
-  const pushIt = () => {
-    const routeParam = encodeURIComponent(selected_cat);
-    history.push(`/category/${routeParam}`);
-  };
+  // const pushIt = () => {
+  //   const routeParam = encodeURIComponent(selected_cat);
+  //   history.push(`/category/${routeParam}`);
+  // };
 
   useEffect(() => {
     async function DataFetching() {
@@ -42,9 +42,9 @@ export default function DiscoverCocktails() {
         const searchParam = encodeURIComponent(category.strCategory);
         return (
           <Link
-            // onClick={(e) => history.push(`/category/${searchParam}`)}
-            onChange={(e) => set_selected_cat(e.target.value)}
-            onClick={pushIt}
+            onClick={(e) => history.push(`/category/${searchParam}`)}
+            // onChange={(e) => set_selected_cat(e.target.value)}
+            // onClick={pushIt}
             key={category.strCategory}
             to={`/category/${searchParam}`}
           >
