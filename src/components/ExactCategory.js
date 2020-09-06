@@ -11,22 +11,20 @@ export default function ExactCategory() {
 
   useEffect(() => {
     async function doSomeDataFetching() {
-      console.log("I'm gonna fetch some data!");
+      // console.log("I'm gonna fetch some data!");
 
       const res = await axios.get(
         `https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=${route_parameters.drink_cat}`
       );
 
-      console.log("GOT BACK", res);
+      // console.log("GOT BACK", res);
       set_cocktailCat(res.data.drinks);
     }
 
     doSomeDataFetching();
   }, [route_parameters.drink_cat]);
 
-  // if (!cocktailCat) return <div>Loading...</div>;
-
-  console.log("LOOK", cocktailCats);
+  // console.log("LOOK", cocktailCats);
 
   return (
     <div>

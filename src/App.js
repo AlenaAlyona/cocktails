@@ -3,7 +3,7 @@ import "./App.css";
 import { Switch, Route } from "react-router-dom";
 import NavBar from "./components/navBar";
 import DiscoverCocktails from "./components/DiscoverCocktails";
-import Home from "./components/HomePage";
+// import Home from "./components/HomePage";
 import ExactCategory from "./components/ExactCategory";
 
 function App() {
