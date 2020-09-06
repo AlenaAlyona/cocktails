@@ -14,7 +14,6 @@ function App() {
       <Switch>
         <Route path="/category/:drink_cat" component={ExactCategory} />
         <Route exact path="/" component={DiscoverCocktails} />
-        {/* <Categories /> */}
       </Switch>
     </div>
   );
